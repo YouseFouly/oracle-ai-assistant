@@ -26,7 +26,7 @@ ORACLE_SYSTEM = (
 )
 
 def oracle_agent_response(user_prompt):
-    gemini_model = genai.GenerativeModel("gemini-3-pro-preview")
+    gemini_model = genai.GenerativeModel("gemma-2b-it")
     full_prompt = f"{ORACLE_SYSTEM}\n\nQuestion:\n{user_prompt}"
     response = gemini_model.generate_content(full_prompt)
     return response.text
@@ -34,7 +34,7 @@ def oracle_agent_response(user_prompt):
 
 # get response from Gemini-Pro-Vision model - image/text to text
 def gemini_flash_vision_response(prompt, image):
-    gemini_flash_vision_model = genai.GenerativeModel("gemini-3-pro-preview")
+    gemini_flash_vision_model = genai.GenerativeModel("gemma-2b-it")
     response = gemini_flash_vision_model.generate_content([prompt, image])
     result = response.text
     return result
@@ -53,11 +53,12 @@ analyze it as an Oracle support engineer would.
 """)
 
 def oracle_troubleshooter_response(user_prompt):
-    gemini_model = genai.GenerativeModel("gemini-3-pro-preview")
+    gemini_model = genai.GenerativeModel("gemma-2b-it")
     full_prompt = f"{ORACLE_TROUBLESHOOT_PROMPT}\n\nQuestion:\n{user_prompt}"
     response = gemini_model.generate_content(full_prompt)
 
     return response.text
+
 
 
 
