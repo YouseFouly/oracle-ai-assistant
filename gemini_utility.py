@@ -26,7 +26,7 @@ ORACLE_SYSTEM = (
 )
 
 def oracle_agent_response(user_prompt):
-    gemini_model = genai.GenerativeModel("gemini-2.0-flash-001")
+    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
     full_prompt = f"{ORACLE_SYSTEM}\n\nQuestion:\n{user_prompt}"
     response = gemini_model.generate_content(full_prompt)
     return response.text
@@ -58,3 +58,4 @@ def oracle_troubleshooter_response(user_prompt):
     response = gemini_model.generate_content(full_prompt)
 
     return response.text
+
