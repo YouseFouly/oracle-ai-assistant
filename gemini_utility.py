@@ -1,21 +1,12 @@
 import os
 import json
 from PIL import Image
-
+import streamlit as st
 import google.generativeai as genai
 
-# working directory path
-working_dir = os.path.dirname(os.path.abspath(__file__))
 
-# path of config_data file
-config_file_path = f"{working_dir}/config.json"
-config_data = json.load(open("config.json"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-# loading the GOOGLE_API_KEY
-GOOGLE_API_KEY = config_data["GOOGLE_API_KEY"]
-
-# configuring google.generativeai with API key
-genai.configure(api_key=GOOGLE_API_KEY)
 
 # System prompt for Oracle agent
 ORACLE_SYSTEM = (
@@ -58,6 +49,7 @@ def oracle_troubleshooter_response(user_prompt):
     response = gemini_model.generate_content(full_prompt)
 
     return response.text
+
 
 
 
