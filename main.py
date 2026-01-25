@@ -25,11 +25,10 @@ def load_lottie_url(url: str):
         return None
 
 # -------------------- Lottie Animations --------------------
-chat_json = load_lottie_url("https://lottie.host/b6481521-5895-403a-b23b-3f1fd623806d/ssDzflUKd7.json")
+chat_json = load_lottie_url("https://lottie.host/efaed900-e918-4778-af6c-359ec067e84e/dqIieJEJzJ.json")
 cloud_json = load_lottie_url("https://lottie.host/798bb927-01a8-4f9a-bc23-8d50b166a170/V3b2YcztwS.json")
 ERD_json = load_lottie_url("https://lottie.host/50d2d893-14c1-405a-84b0-686c359942a1/nhDWk8fppg.json")
 trouble_json = load_lottie_url("https://lottie.host/274ae616-0630-423e-87ec-cfc8be06315d/6yQjLATANo.json")
-
 # -------------------- Page Configuration --------------------
 st.set_page_config(
     page_title="OracAI",
@@ -190,3 +189,4 @@ if selected == "Oracle Troubleshooter":
     if st.button("Get Response"):
         response = oracle_troubleshooter_response(user_prompt)
         st.markdown(response)
+
