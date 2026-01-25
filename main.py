@@ -62,7 +62,7 @@ if selected == 'ChatBot':
     st.title("⭕Oracle ChatBot")
 
     if chat_json:
-        st_lottie(chat_json, speed=1, loop=True, height=200)
+        st_lottie(chat_json, speed=1, loop=True, height=400)
     else:
         st.error("❌ Failed to load animation.")
 
@@ -189,4 +189,5 @@ if selected == "Oracle Troubleshooter":
     if st.button("Get Response"):
         response = oracle_troubleshooter_response(user_prompt)
         st.markdown(response)
+
 
