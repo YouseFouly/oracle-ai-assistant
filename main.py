@@ -178,7 +178,7 @@ if selected == "Oracle Troubleshooter":
     st.title("❓ Oracle Troubleshooter")
 
     if trouble_json:
-        st_lottie(trouble_json, speed=1, loop=True, height=350)
+        st_lottie(trouble_json, speed=1, loop=True, height=300)
     else:
         st.error("❌ Failed to load animation.")
 
@@ -189,6 +189,7 @@ if selected == "Oracle Troubleshooter":
     if st.button("Get Response"):
         response = oracle_troubleshooter_response(user_prompt)
         st.markdown(response)
+
 
 
 
