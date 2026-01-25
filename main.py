@@ -28,7 +28,7 @@ def load_lottie_url(url: str):
 chat_json = load_lottie_url("https://lottie.host/efaed900-e918-4778-af6c-359ec067e84e/dqIieJEJzJ.json")
 cloud_json = load_lottie_url("https://lottie.host/798bb927-01a8-4f9a-bc23-8d50b166a170/V3b2YcztwS.json")
 ERD_json = load_lottie_url("https://lottie.host/50d2d893-14c1-405a-84b0-686c359942a1/nhDWk8fppg.json")
-trouble_json = load_lottie_url("https://lottie.host/274ae616-0630-423e-87ec-cfc8be06315d/6yQjLATANo.json")
+trouble_json = load_lottie_url("https://lottie.host/7344898f-9d17-4873-b74a-3c14ef8f4dad/LJUpqUrLtf.json")
 # -------------------- Page Configuration --------------------
 st.set_page_config(
     page_title="OracAI",
@@ -178,7 +178,7 @@ if selected == "Oracle Troubleshooter":
     st.title("❓ Oracle Troubleshooter")
 
     if trouble_json:
-        st_lottie(trouble_json, speed=1, loop=True, height=250)
+        st_lottie(trouble_json, speed=1, loop=True, height=350)
     else:
         st.error("❌ Failed to load animation.")
 
@@ -189,5 +189,6 @@ if selected == "Oracle Troubleshooter":
     if st.button("Get Response"):
         response = oracle_troubleshooter_response(user_prompt)
         st.markdown(response)
+
 
 
